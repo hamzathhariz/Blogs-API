@@ -1,4 +1,4 @@
-// const Joi = require('joi');
+const Joi = require('joi');
 const mongoose = require('mongoose');
 // const isObjectId = require('./validation/isObjectId');
 
@@ -25,3 +25,13 @@ const blogSchema = new mongoose.Schema({
 });
 
 exports.Blog = mongoose.model('Blog', blogSchema);
+
+exports.validateBlog = function validateBlog(data) {
+    const schema = Joi.object({
+        title: Joi.string().required(),
+        content: Joi.string().required(),
+        author: Joi.string().required()
+    });
+
+    return schema.validate(data);
+}

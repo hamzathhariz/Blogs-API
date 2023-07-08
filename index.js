@@ -11,18 +11,18 @@ app.listen(process.env.PORT || 3000)
 
 
 // database
-// mongoose.connect('mongodb+srv://hamsa:lnKB8NdFGXSvxXz7@cluster0.maweq.mongodb.net/schinder?retryWrites=true&w=majority');
+mongoose.connect('mongodb+srv://hamsa:lnKB8NdFGXSvxXz7@cluster0.maweq.mongodb.net/blog?retryWrites=true&w=majority');
 
-//     mongoose.connection.on('connected', () => {
-//         console.log(`connected to mongoDB mongodb+srv://hamsa:lnKB8NdFGXSvxXz7@cluster0.maweq.mongodb.net/schinder?retryWrites=true&w=majority }`);
-//     });
+    mongoose.connection.on('connected', () => {
+        console.log(`connected to mongoDB mongodb+srv://hamsa:lnKB8NdFGXSvxXz7@cluster0.maweq.mongodb.net/blog?retryWrites=true&w=majority }`);
+    });
 
 
-// // mongoose.set('debug', true);
+// mongoose.set('debug', true);
 
-// mongoose.connection.on('error', (err) => {
-//   console.log(`MongoDB has occured ${ err }`);
-// });
+mongoose.connection.on('error', (err) => {
+  console.log(`MongoDB has occured ${ err }`);
+});
 
 app.use(cors());
 
